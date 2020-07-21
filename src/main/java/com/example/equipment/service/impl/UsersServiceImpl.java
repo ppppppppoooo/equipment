@@ -25,12 +25,10 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
     @Autowired
     UsersMapper mapper;
-
-    @Resource
-    private RedisTemplate<String, Object> redisTemplate;
-
+    @Autowired
+     RedisTemplate<String, Object> redisTemplate;
     @Override
-    public String  login(Users users) {
+    public String login(Users users) {
         Users u = mapper.selectById(users);
         if (u!=null){
             String token = UUID.randomUUID() + "";
