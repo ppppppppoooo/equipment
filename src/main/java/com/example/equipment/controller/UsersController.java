@@ -20,11 +20,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since 2020-07-14
  */
 @Controller
-@RequestMapping("view/generator/users")
+@RequestMapping("/view/generator/users")
 @ResponseBody
 public class UsersController {
+
+
     @Autowired
-    UsersService service;
+    UsersServiceImpl service;
+
     @PostMapping("/login")
     public String login(@RequestBody Users users) {
         return service.login(users);
