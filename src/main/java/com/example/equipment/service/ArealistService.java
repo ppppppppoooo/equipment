@@ -2,6 +2,7 @@ package com.example.equipment.service;
 
 import com.example.equipment.entity.Arealist;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.equipment.entity.Users;
 
 /**
  * <p>
