@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
-@MapperScan("com.example.equipment.mappers")
+@MapperScan("com.example.equipment.mapper")
 @ServletComponentScan
 public class EquipmentApplication {
     public static void main(String[] args) {

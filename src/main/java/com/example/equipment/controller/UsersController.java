@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since 2020-07-14
  */
 @Controller
-@RequestMapping("/generator/users")
+@RequestMapping("generator/users")
 @ResponseBody
 public class UsersController {
 
@@ -28,7 +28,7 @@ public class UsersController {
     @Autowired
     UsersServiceImpl service;
 
-    @PostMapping("/userid")
+    @PostMapping("/login")
     public String login(@RequestBody Users users) {
         return service.login(users);
     }

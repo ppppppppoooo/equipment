@@ -1,5 +1,6 @@
 package com.example.equipment.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.equipment.entity.Users;
 import com.example.equipment.mapper.UsersMapper;
 import com.example.equipment.service.UsersService;
@@ -31,7 +32,10 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
     @Override
     public String  login(Users users) {
-        Users u = mapper.selectById(users);
+        QueryWrapper queryWrapper =new QueryWrapper();
+        queryWrapper.eq("username",users.getUsername());
+        queryWrapper.eq("pwd",users.getPwd());
+        Users u =mapper.selectOne(queryWrapper);
         if (u!=null){
             String token = UUID.randomUUID() + "";
             //存入redis
