@@ -19,5 +19,6 @@ public interface WifiinputequipmentService extends IService<Wifiinputequipment> 
     public Integer insert(Wifiinputequipment o);
     public Integer updateByName(Wifiinputequipment o);
     public Integer deleteByName(Wifiinputequipment o);
+    public List<Wifiinputequipment> QueryByAreaId(Integer id);
 
 }

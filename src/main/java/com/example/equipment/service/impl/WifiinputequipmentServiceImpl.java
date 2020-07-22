@@ -51,4 +51,12 @@ public class WifiinputequipmentServiceImpl extends ServiceImpl<Wifiinputequipmen
         return mapper.deleteById(o);
     }
 
+    @Override
+    public List<Wifiinputequipment> QueryByAreaId(Integer id) {
+        QueryWrapper<Wifiinputequipment> queryWrapper =new QueryWrapper<>();
+        queryWrapper.eq("areaID",id);
+        return mapper.selectList(queryWrapper);
+    }
+
+
 }
