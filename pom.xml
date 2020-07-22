@@ -120,11 +120,6 @@
             <version>2.3.0.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>demo</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>locker-spring-boot-starter</artifactId>
             <version>1.0.0</version>

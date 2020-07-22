@@ -2,6 +2,8 @@ package com.example.equipment.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -20,7 +22,7 @@ import lombok.experimental.Accessors;
 public class Camerainputequipment implements Serializable {
 
     private static final long serialVersionUID=1L;
-
+      @TableId("name")
       private String name;
 
     @TableField("equipmentMarkIP")
