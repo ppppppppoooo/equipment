@@ -20,4 +20,5 @@ public interface OutputequipmentService extends IService<Outputequipment> {
     public Integer insert(Outputequipment o);
     public Integer updateByName(Outputequipment o);
     public Integer deleteByName(Outputequipment o);
+    public List<Outputequipment> queryByAreaID(Integer id);
 }

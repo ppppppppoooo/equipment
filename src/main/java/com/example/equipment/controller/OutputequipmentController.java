@@ -4,6 +4,8 @@ package com.example.equipment.controller;
 import com.example.equipment.entity.Outputequipment;
 import com.example.equipment.service.OutputequipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,10 @@ public class OutputequipmentController {
     public Integer insert(Outputequipment o){return service.insert(o);}
     public Integer updateByName(Outputequipment o){return service.updateByName(o);}
     public Integer deleteByName(Outputequipment o){return service.deleteByName(o);}
+    @PostMapping("/QueryByAreaID")
+    public List<Outputequipment> QueryByAreaID(Integer id){
+        return service.queryByAreaID(id);
+    }
 
 }
 

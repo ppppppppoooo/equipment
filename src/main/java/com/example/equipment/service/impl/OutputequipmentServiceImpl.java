@@ -54,4 +54,11 @@ public class OutputequipmentServiceImpl extends ServiceImpl<OutputequipmentMappe
     public Integer deleteByName(Outputequipment o) {
         return mapper.deleteById(o.getName());
     }
+
+    @Override
+    public List<Outputequipment> queryByAreaID(Integer id) {
+        QueryWrapper<Outputequipment> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("areaID",id);
+        return mapper.selectList(queryWrapper);
+    }
 }

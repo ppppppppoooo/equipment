@@ -25,4 +25,16 @@ public class GetDataController {
         return "";
     }
 
+    @PostMapping("/postBy")
+    public String postBy(String dev_uid,String Signal_IOdata){
+        HttpClientUtil c=new HttpClientUtil();
+        String url="http://post.iot.o8y.net/Pro_post/?type=4&dev_uid="+dev_uid+"&api_key=B895C0F76C9D18DDBC52F819B0302A85&Signal_IOdata="+Signal_IOdata;
+        try {
+            return HttpClientUtil.httpPostOperation(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
 }
