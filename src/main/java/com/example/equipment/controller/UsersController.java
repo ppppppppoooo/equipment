@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since 2020-07-14
  */
 @Controller
-@RequestMapping("generator/users")
+@RequestMapping("/view/generator/users")
 @ResponseBody
 public class UsersController {
 
@@ -30,7 +30,10 @@ public class UsersController {
 
     @PostMapping("/login")
     public String login(@RequestBody Users users) {
+        System.err.println(1);
         return service.login(users);
+
+
     }
 
 }

@@ -58,5 +58,6 @@ public class ArealistController {
         return service.Insert(area);
     }
 
+
 }
 
