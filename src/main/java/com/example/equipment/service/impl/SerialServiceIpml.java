@@ -22,6 +22,7 @@ public class SerialServiceIpml extends ServiceImpl<SerialPortMapper, SerialPort>
     @Override
     public void checked() {
         List<SerialVo> list = mapper.selectSeialVo();
+        /*重新给设备更新实际值*/
         for (SerialVo s : list) {
             System.err.println(s.getNumber());
             System.err.println(s.getN());
@@ -49,6 +50,19 @@ public class SerialServiceIpml extends ServiceImpl<SerialPortMapper, SerialPort>
             }
             mapper.updateById(extract(s));
         }
+    }
+
+    @Override
+    public void AutoOut() {
+        List<Outputequipment> outputequipmentList = mapper.SelectAuto();
+        for (Outputequipment outputequipment : outputequipmentList) {
+            /*自动化启动设备*/
+        }
+    }
+
+    @Override
+    public void AutoCollection() {
+
     }
 
     @Autowired

@@ -15,9 +15,10 @@ public class Timer {
     @Scheduled(fixedDelay = 100000)
     public void checked() {
         service.checked();
+        service.AutoOut();
     }
-    @Scheduled(fixedDelay = 1000)
-    public void c(){
-        System.err.println(1);
+    @Scheduled(fixedDelay = 600000)
+    public void AutoCollection(){
+
     }
 }

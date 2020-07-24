@@ -19,5 +19,11 @@ public interface SerialPortMapper extends BaseMapper<SerialPort> {
 
     @Select("SELECT  o.name  FROM `outputequipment` AS o WHERE o.`areaID`= (SELECT w.`areaID` FROM `camerainputequipment` AS w WHERE w.`name`=#{name} )\n")
     public  List<Outputequipment>  selectOutputequipmentByarea2(String name);
+    @Select(" SELECT   *  FROM   `outputequipment` WHERE   `name` IN (SELECT  auto.`outputequipmentIp`\n" +
+            " FROM  `automaticcontrolequipment` AS auto \n" +
+            " WHERE \n" +
+            " auto.`serialportid`= (SELECT  id FROM   `serial_port` WHERE  `open_static`= '1' ) \n" +
+            "GROUP BY  auto.`id` )")
+    public  List<Outputequipment> SelectAuto();
 
 }

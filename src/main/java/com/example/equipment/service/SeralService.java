@@ -5,4 +5,6 @@ import com.example.equipment.entity.SerialPort;
 
 public interface SeralService extends IService<SerialPort> {
     public void checked();
+    public void  AutoOut();
+    public void  AutoCollection();
 }
